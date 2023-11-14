@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<div class="row">
+    <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-start">
+        <h1 class="display-2">Cadastro Hospital</h1>
+    </div>
+    <div class="col-12 col-lg-4">
+        <form action="/cadastrar-hospital" method="post" class="bg-secondary p-3 rounded rounded-3">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Hospital de Tal">
+                <label for="nome">Nome do Hospital</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="hospital@email.com">
+                <label for="email">E-mail</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="123456">
+                <label for="senha">Senha</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confsenha" name="confsenha" placeholder="123456">
+                <label for="confsenha">Confirmação de Senha</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="localizacao" name="localizacao" placeholder="localização">
+              <label for="nome">Localização</label>
+          </div>
+            <div class="form-floating mb-3">
+              <div class="row mt-3">
+                  <div class="col">
+                    <label for="horario_inicio">Horario inicio:</label>
+                      <input type="time" class="form-control" id="horario_inicio" name="horario_inicio" placeholder="08:00">
+                  </div>
+                  <div class="col">
+                    <label for="horario_fim">Horario fim:</label>
+                    <input type="time"  class="form-control" id="horario_fim" name="horario_fim" placeholder="22:00">
+                      
+                  </div>
+              </div>
+          </div>
+            <div class="text-white mt-3 mb-3"><h2>Dias disponíveis:</h2></div>
+            <div class="row multi-escolha text-nowrap">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="opcao1" class="form-check-label">
+                      <input type="checkbox" id="opcao1" class="form-check-input" name="segunda" value="Tre">
+                      segunda-feira
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="opcao2" class="form-check-label">
+                      <input type="checkbox" id="opcao2" class="form-check-input" name="terca" value="True">
+                      terça-feira
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="opcao3" class="form-check-label">
+                      <input type="checkbox" id="opcao3" class="form-check-input" name="quarta" value="True">
+                      quarta-feira
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="opcao4" class="form-check-label">
+                      <input type="checkbox" id="opcao4" class="form-check-input" name="quinta" value="True">
+                      quinta-feira
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="opcao5" class="form-check-label">
+                      <input type="checkbox" id="opcao5" class="form-check-input" name="sexta" value="True">
+                      sexta-feira
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="opcao6" class="form-check-label">
+                      <input type="checkbox" id="opcao6" class="form-check-input" name="sabado" value="True">
+                      sabado
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="opcao7" class="form-check-label">
+                      <input type="checkbox" id="opcao7" class="form-check-input" name="domingo" value="True">
+                      domingo
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                 <button class="mt-3 btn btn-lg cor-amarelo btn-danger border-0  link_personalizado1" type="submit" name="botao" value="proximo" id="etapa1-button-next">Próximo</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

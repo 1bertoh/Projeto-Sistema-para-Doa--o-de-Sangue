@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<div class="row">
+    <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+        <h1 class="mb-4 display-2 fw-semibold">Bem vindo Hospital</h1>
+        <h2 class="mt-4">O que você deseja fazer?</h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+        <div class="p-3 rounded rounded-3">
+            <div>
+                <a href="/hospital/{{usuario.id}}/editar/menu"
+                    class="btn btn-lg  w-100 cor-amarelo btn-success mb-3 link_personalizado1">
+                    Editar Hospital
+                </a>
+            </div>
+            <div>
+                <a href="/hospital/{{id}}/solicitacoes-doacao"
+                    class="btn btn-lg w-100 cor-amarelo btn-success mb-3 link_personalizado1">
+                    Solicitações de doação
+                </a>
+            </div>
+            <div>
+                <form method="post" action="/hospital/logout">
+                    <button class="w-100 btn btn-lg cor-amarelo btn-danger border-0  link_personalizado1" type="submit">Sair</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

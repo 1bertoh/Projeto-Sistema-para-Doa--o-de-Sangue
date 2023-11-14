@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/hospital">
+            <img src="/static/img/logo.svg" alt="Logo" width="48" class="d-inline-block align-text-top">
+            <span class="fs-2 fw-bold ms-2 sombra-texto">Blood Call</span>
+        </a>
+
+        <div class="dropdown">
+            <a href="#" class="nav-link dropdown-toggle text-white text-decoration-underline"
+                data-bs-toggle="dropdown">
+                INICIO
+                <i class="bi bi-hospital px-2" style="font-size: 2em; display: inline;"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/hospital/{{id}}/editar/menu">Editar Hospital</a></li>
+                <li><a class="dropdown-item" href="/hospital/{{id}}/solicitacoes-doacao">Solicitações de doação</a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <form method="post" action="/hospital/logout">
+                        <button class="w-100 border-0 bg-white" type="submit">
+                            Sair
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

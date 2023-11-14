@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<div class="row">
+    <div class="col-12 col-lg-4 d-flex flex-column align-items-center">
+        <h1 class="mb-4 display-2 fw-semibold">Bem vindo Hospital</h1>
+        <h2 class="mt-4">O que você deseja editar?</h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+        <div class="p-3 rounded rounded-3">
+            <div>
+                <a href="/hospital/{{id}}/editar-hospital"
+                    class="btn btn-lg  w-100 cor-amarelo btn-success mb-3 link_personalizado1">
+                    Editar Informações
+                </a>
+            </div>
+            <div>
+                <a href="/hospital/{{id}}/editar-estoque-sangue"
+                    class="btn btn-lg w-100 cor-amarelo btn-success mb-3 link_personalizado1">
+                    Estoque de Sangue
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

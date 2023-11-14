@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="row">
+    <div class="col-12 mb-5">
+        <h1 class="mb-5 display-2 fw-semibold fs-3 mt-0">Consultar histórico de
+            Doações</h1>
+    </div>
+    <div class="col-6">
+        <div class="col mb-3 bg-secondary p-3 rounded rounded-3">
+
+            <div class="form-floating justify-content-start">
+                <form action="" action="get">
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label for="horario_inicio">Horario inicio:</label>
+                            <input required type="datetime-local" class="form-control" id="horario_inicio" name="data_inicio" placeholder="08:00" value={{params.data_inicio}}>
+                        </div>
+                        <div class="col">
+                            <label for="horario_fim">Horario fim:</label>
+                            <input required type="datetime-local" class="form-control" id="horario_fim" name="data_fim" placeholder="22:00" value={{params.data_fim}}>
+    
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="opcoes">Hospital Selecionado:</label>
+                        <select required class="form-select" id="opcoes" name="id_hospital" style="height: auto;" multiple aria-label="multiple select example">
+                            <!-- <option value="">Selecione o seu tipo sanguíneo...</option> -->
+                           {% for h in hospitais %}
+                                <option {{'selected' if params.id_hospital == h.id else ''}} value="{{h.id}}">{{h.nome}}</option>
+                            {% endfor %}
+                        </select>
+    
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-lg w-100 cor-amarelo btn-danger border-0 mb-3 link_personalizado1">
+                                filtrar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="col mb-3 cor-amarelo p-3 rounded rounded-3">
+            <div class="text-center">
+                <h2>Agenda</h2>
+            </div>
+            <div class="overflow-auto" style="height: 290px;">
+                {% if doacoes is  none %}
+                    <p>Doações não encontradas</p>
+                {% else %}
+                    <div class="accordion" id="accordionExample">
+                        {% for d in doacoes %}
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <span class="accordion-button d-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{d.id}}" aria-expanded="false" aria-controls="collapse-{{d.id}}">
+                                <span class="d-flex justify-content-between pe-4">
+                                    <span class="d-block">
+                                    Hospital: {{d.hospital.nome}}
+                                    </span>
+                                    <span class="d-block">
+                                    Sala: {{d.hospital.sala}}
+                                    </span>
+                                    <span class="d-block">
+                                    Situacao: {{d.situacao.nome}}
+                                    </span>
+                                </span>
+                                <span class="d-block"><strong>{{d.data_e_hora.data}} ás {{d.data_e_hora.hora}}</strong></span>
+                              </span>
+                            </h2>
+                            <div id="collapse-{{d.id}}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <strong>Observação</strong>
+                                  <p>
+                                    {{d.observacao}}
+                                  </p>
+                              </div>
+                            </div>
+                          </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

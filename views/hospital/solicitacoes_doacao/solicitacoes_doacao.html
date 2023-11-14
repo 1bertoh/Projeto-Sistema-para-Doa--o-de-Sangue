@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<div class="d-flex align-items-center justify-content-between">
+<h1 class="display-2">
+    Solitações de Doações
+</h1>
+
+</div>
+<hr>
+<div class="row">
+    <div class="col-6 offset-3">
+        <table class="table table-striped table-sm tabela-hospitais">
+            <!-- thead>tr>(th{Coluna $})*4 -->
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Dia</th>
+                    <th>Horário</th>
+                    <th style="width: 90px">Ações</th>
+                </tr>
+            </thead>
+            <!-- tbody>(tr>(td{Dados $})*4)*10 -->
+            <tbody>
+                {% for s in solicitacoes %}
+                    <tr>
+                        <td>
+                            <a href="/hospital/{{id}}/solicitacao-doacao/{{s.id}}">
+                                {{s.user.nome_completo}}
+                            </a>
+                        </td>
+                        <td>
+                            <span>
+                                {{s.data_e_hora.data}}    
+                            </span>
+                        </td>
+                        <td>
+                            <span>
+                                {{s.data_e_hora.hora}}   
+                            </span>
+                        </td>
+                        <td class="d-flex">
+                            <a href="/hospital/{{id}}/solicitacao-doacao/{{s.id}}/negar" class="btn btn-danger btn-sm mx-1 shadow">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                            <a href="/hospital/{{id}}/solicitacao-doacao/{{s.id}}/aceitar" class="btn btn-success btn-sm mx-1 shadow">
+                                <i class="bi bi-check"></i>
+                            </a>
+                        </td>
+                    </tr>
+        
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+    
+</div>
+
+{% endblock %}

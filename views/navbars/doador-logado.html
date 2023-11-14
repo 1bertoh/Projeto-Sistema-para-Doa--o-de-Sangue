@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/static/img/logo.svg" alt="Logo" width="48" class="d-inline-block align-text-top">
+                <span class="fs-2 fw-bold ms-2 sombra-texto">Blood Call</span>
+            </a>
+
+            <div class="dropdown">
+                <a href="#" class="nav-link text-white" data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle px-2" style="font-size: 2em; display: inline;"></i>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="/usuario/{{usuario.id}}/consultar-banco-sangue">Consultar banco de sangue</a></li>
+                    <li><a class="dropdown-item" href="/usuario/{{usuario.id}}/gerenciar-doacoes">Gerenciar doações</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/usuario/{{usuario.id}}/historico-doacoes">
+                            Consultar histórico de doações
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="/usuario/{{usuario.id}}/arquivo-exame">
+                            Subir exame
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <form method="post" action="/usuario/logout">
+                            <button class="w-100 border-0 bg-white" type="submit">
+                                Sair
+                            </button>
+                        </form>
+                        <!-- <a class="dropdown-item" href="/usuario/logout">Sair</a> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

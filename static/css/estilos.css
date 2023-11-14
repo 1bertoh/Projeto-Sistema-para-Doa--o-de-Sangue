@@ -1,0 +1,102 @@
+body {
+    background-image: url("/static/img/bg.svg");
+    background-size: cover;
+    background-position-y: 20vh;
+    background-repeat: no-repeat;    
+    min-height: 100vh;
+}
+
+.sombra-texto {
+    text-shadow: 2px 2px 5px black;
+}
+
+.link_personalizado1 {
+    text-decoration: none;
+    color: white;
+}
+
+/* .multi-escolha {
+    padding-left: 100px;
+    padding-top: 20px;
+} */
+
+.multi-escolha {
+    padding-top: 20px;
+}
+
+.cor-amarelo {
+    color:black;
+    background-color: rgb(235, 229, 155);
+}
+
+.mouse-passa-amarelo-forte:hover{
+    background-color: rgb(255, 193, 7);
+}
+
+.barra{
+    display: inline-block;
+    width:400px;
+    height: 30px
+}
+
+.fonte-padrao {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .bar{
+    border: 1px solid black;
+    display: flex;
+  /*   padding-top:10px;
+    padding-bottom:10px; */
+    width:200px;
+    height: 30px;
+    align-items: center;
+    border-radius:20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden
+  }
+  .progresso{
+    height: 100%;
+    background: green;
+    display: block;
+    position: absolute;
+    z-index: 1;
+  /*   border */
+  }
+  
+  .numero{
+    padding-left: 10px;
+    z-index: 2;
+  }
+
+
+  .dashed-border {
+    border-bottom: 1px dashed #000;
+  }
+
+
+/* .carousel-container {
+  height: 360px; 
+}
+
+.cadastrar-container {
+  height: 650px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.encima {
+  top: -500px;
+}
+
+.encima2 {
+  position: relative;
+  top: -325px;
+}
+ */
+
+

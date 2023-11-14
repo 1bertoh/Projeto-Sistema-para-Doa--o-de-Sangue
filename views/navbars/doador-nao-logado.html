@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/static/img/logo.svg" alt="Logo" width="48" class="d-inline-block align-text-top">
+            <span class="fs-2 fw-bold ms-2 sombra-texto">Blood Call</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="menu" class="collapse navbar-collapse justify-content-end">
+            <nav id="navbar-nav" class="navbar-nav sombra-texto">
+                <a href="/" class="{{'active' if rota == 'inicio' else ''}} nav-link">INÍCIO</a>
+                <a href="/contato" class="{{'active' if rota == 'contato' else ''}} nav-link">CONTATO</a>
+                <a href="/cadastro" class="{{'active' if rota == 'cadastro' else ''}} nav-link">SEJA UM DOADOR</a>
+                <a href="/sobre" class="{{'active' if rota == 'sobre' else ''}} nav-link">SOBRE NÓS</a>
+                <a href="/login" class="{{'active' if rota == 'login' else ''}} nav-link">LOGIN</a>
+            </nav>
+        </div>
+    </div>
+</nav>

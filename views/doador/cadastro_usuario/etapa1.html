@@ -1,0 +1,49 @@
+
+    <div class="form-floating mb-3">
+        <input type="text" value="{{fields.nome_completo}}" class="form-control" id="nome_completo" name="nome_completo" placeholder="Fulano de Tal">
+        <label for="nome_completo">Nome Completo</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{fields.cpf}}" class="form-control" id="cpf" name="cpf" placeholder="123.456.789-12">
+        <label for="cpf">CPF</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{fields.data_nascimento}}" type="date" class="form-control" id="data_nascimento" name="data_nascimento" placeholder="01/01/2000">
+        <label for="data_nascimento">Data de Nascimento</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{fields.telefone}}" type="tel" class="form-control" id="telefone" name="telefone" placeholder="(28) 99999-9999">
+        <label for="telefone">Telefone</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{fields.telefone_emergencia}}" type="tel" class="form-control" id="telefone_emergencia" name="telefone_emergencia" placeholder="(28) 99999-8888">
+        <label for="telefone_emergencia">Telefone de Emergência</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{fields.email}}" type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com">
+        <label for="email">E-mail</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{fields.senha}}" type="password" class="form-control" id="senha" name="senha" placeholder="123456">
+        <label for="senha">Senha</label>
+    </div>
+    <div class="form-floating">
+        <input value="{{fields.conf_senha}}" type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder="123456">
+        <label for="conf_senha">Confirmação de Senha</label>
+    </div>
+
+
+    <!-- <div class="d-flex justify-content-end">
+                        <button class="mt-3 btn btn-lg cor-amarelo btn-danger border-0  link_personalizado1"
+                            type="submit" name="botao" value="proximo" id="etapa1-button-next">Próximo
+                        </button>
+                    </div> -->
+
+
+    <div class="d-flex justify-content-between">
+      <a class="mt-3 btn btn-lg cor-amarelo btn-danger border-0  link_personalizado1" href="/">Anterior</a>
+
+                        <button class="mt-3 btn btn-lg cor-amarelo btn-danger border-0  link_personalizado1"
+                            type="submit" name="botao" value="proximo" id="etapa1-button-next">Próximo
+                        </button>
+                    </div>

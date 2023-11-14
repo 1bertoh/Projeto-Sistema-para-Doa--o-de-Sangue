@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="row">
+    <div class="col-12 mb-1">
+        <h1 class="mb-1 display-2 fw-semibold fs-3 ">Seja Bem Vindo! {{usuario.nome_completo}}</h1>
+    </div>
+    <div class="col-6 offset-3 mt-5">
+        <div class="col mb-3 bg-secondary p-3 rounded rounded-3">
+            <div>
+                <a href="/usuario/{{usuario.id}}/consultar-banco-sangue"
+                    class="btn btn-lg  w-100 cor-amarelo btn-danger border-0 mb-3 link_personalizado1">
+                    Consultar banco de sangue
+                </a>
+            </div>
+            <div>
+                <a href="/usuario/{{usuario.id}}/gerenciar-doacoes"
+                    class="btn btn-lg w-100 cor-amarelo btn-danger border-0 mb-3 link_personalizado1">
+                    Gerenciar doações
+                </a>
+            </div>
+            <div>
+                <a href="/usuario/{{usuario.id}}/historico-doacoes"
+                    class="btn btn-lg w-100 cor-amarelo btn-danger border-0 mb-3 link_personalizado1">
+                    Consultar histórico de doações
+                </a>
+            </div>
+            <!--Será um form e um button-->
+            <div>
+                <form method="post" action="/usuario/logout">
+                    <button class="w-100 btn btn-lg cor-amarelo btn-danger border-0  link_personalizado1" type="submit">Sair</button>
+                </form>
+                <!-- <a href="/usuario/logout"
+                    class="btn btn-lg w-100 cor-amarelo btn-danger border-0 mb-3 link_personalizado1">
+                    Sair
+                </a> -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

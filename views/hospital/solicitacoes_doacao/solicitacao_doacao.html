@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<div class=" row ">
+    <div class="col-12 d-flex justify-content-center justify-content-lg-start">
+        <h1 class="display-2">Solicitações de doação</h1>
+    </div>
+
+    <div class="col-md-6 offset-md-3 bg-secondary p-2 rounded rounded-3 carousel-container">
+        <div id="carouselExample" class="carousel slide" interval="600000" >
+            
+                <div class="carousel-inner">
+                    <div class="carousel-item active ">
+                        <div class="d-block px-5">
+                            <div class="bg-secondary p-3 rounded rounded-3">
+                                <div class="mb-3"><h2>Solicitação do doador</h2></div>
+                                <hr/>
+                                    <div>
+                                        <table class="">
+                                            <tr>
+                                              <th>Nome:</th>
+                                              <td>{{doador.nome_completo}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Data Nascimento:</th>
+                                              <td>{{doador.data_nascimento}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Email:</th>
+                                              <td>{{doador.email}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Telefone:</th>
+                                              <td>{{doador.telefone}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Telefone Emergencia:</th>
+                                              <td>{{doador.telefone_emergencia}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Logradouro:</th>
+                                              <td> {{doador.logradouro}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Número:</th>
+                                              <td>{{doador.numero}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Complemento:</th>
+                                              <td>{{doador.complemento}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Bairro:</th>
+                                              <td>{{doador.bairro}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Cidade:</th>
+                                              <td>{{doador.cidade}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>UF:</th>
+                                              <td>{{doador.uf}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>CEP:</th>
+                                              <td>{{doador.cep}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Peso:</th>
+                                              <td>{{doador.peso}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Altura:</th>
+                                              <td>{{doador.altura}}</td>
+                                            </tr>
+                                            <tr>
+                                              <th>Tipo sanguíneo:</th>
+                                              <td> {{doador.tipo_sangue}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="d-block px-5">
+                            <div class="bg-secondary p-3 rounded rounded-3">
+                              <div class="mb-3">
+                                <h2>Saúde do doador</h2>
+                              </div>
+                                <hr/>
+                              <div class="container text-wrap">
+                                <h3 class="fonte-padrao d-inline">Infomação de saúde:</h3>
+                                <p class="">
+                                    {{doador.informacao_saude}}
+                                </p>
+                              </div>
+                            </div>
+                            <hr/>
+                            <a href="/hospital/{{id}}/solicitacoes-doacao"
+                                class="btn btn-lg w-100 cor-amarelo btn-success mb-3 link_personalizado1">
+                                Baixar exame
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev justify-content-start" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next justify-content-end"  type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+        </div>
+    </div>
+    <div class="d-flex mt-3 justify-content-center">
+        <a href="/hospital/{{id}}/solicitacao-doacao/{{solicitacao.id}}/aceitar" class="btn btn-danger btn-lg mx-2 shadow">Negar</a>
+      <a href="/hospital/{{id}}/solicitacoes-doacao" class="btn cor-amarelo btn-lg mx-2 shadow mouse-passa-amarelo-forte">Voltar</a>
+        <a href="/hospital/{{id}}/solicitacao-doacao/{{solicitacao.id}}/negar" class="btn btn-success btn-lg mx-2 shadow">Aceitar</a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

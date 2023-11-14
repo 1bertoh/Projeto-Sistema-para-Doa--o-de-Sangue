@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="row">
+    <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-start">
+        <h1 class="display-2">Cadastro</h1>
+    </div>
+    <div class="col-12 col-lg-4">
+        <form id="form-content" action="/cadastro" method="post" class="bg-secondary p-3 rounded rounded-3">
+            {% if etapa ==1 %}
+                {% include "doador/cadastro_usuario/etapa1.html" %}
+            {% elif etapa == 2 %}
+                {% include "doador/cadastro_usuario/etapa2.html" %}
+            {% elif etapa == 3 %}
+                {% include "doador/cadastro_usuario/etapa3.html" %}
+            {% elif etapa == 4 %}
+                {% include "doador/cadastro_usuario/etapa4.html" %}
+            {% elif etapa == 5 %}
+                {% include "doador/cadastro_usuario/etapa5.html" %}
+            {% endif %}
+            
+        </form>
+    </div>
+    
+    <div class="col-12 col-lg-4 justify-content-end d-none d-lg-flex">
+        <nav class="nav nav-pills flex-column w-auto text-end justify-content-center">
+            <a id="etapa1-link" class="{{'active' if etapa == 1 else 'bg-white'}} nav-link border mb-3">
+                <span class="fs-5 me-3">Dados Pessoais</span>
+                <span class="badge bg-white rounded-5 text-dark fs-5">1</span>
+            </a>
+            <a id="etapa2-link" class="{{'active' if etapa == 2 else 'bg-white'}} nav-link border mb-3">
+                <span class="fs-5 me-3">Endereço</span>
+                <span class="badge bg-white rounded-5 text-dark fs-5">2</span>
+            </a>
+            <a id="etapa3-link" class="{{'active' if etapa == 3 else 'bg-white'}} nav-link border mb-3" >
+                <span class="fs-5 me-3">Saúde</span>
+                <span class="badge bg-white rounded-5 text-dark fs-5 border">3</span>
+            </a>
+            <a id="etapa4-link" class="{{'active' if etapa == 4 else 'bg-white'}} nav-link border mb-3">
+                <span class="fs-5 me-3">Peso, Altura etc.</span>
+                <span class="badge bg-white rounded-5 text-dark fs-5 border">4</span>
+            </a>
+            <a id="etapa5-link" class="{{'active' if etapa == 5 else 'bg-white'}} nav-link border">
+                <span class="fs-5 me-3">Concluído</span>
+                <span class="badge bg-white rounded-5 text-dark fs-5 border">5</span>
+            </a>
+        </nav>
+    </div>
+</div>
+<!--<script type="module" src="/static/js/cad_load_form.js"></script>-->
+
+{% endblock %}

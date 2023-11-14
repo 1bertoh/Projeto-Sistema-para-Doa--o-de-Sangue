@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<div class="row min-vh-100">
+    <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-md-start">
+        <h1 class="display-2">Login</h1>
+    </div>
+    <div class="col-12 col-lg-6 align-self-center">
+        <form action="/login" method="post" class="bg-secondary p-3 rounded rounded-3">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com">
+                <label for="email">E-mail</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="123456">
+                <label for="senha">Senha</label>
+            </div>
+            <div class="text-center">
+                <button id="submit" class="btn btn-lg w-100 btn-primary bg-gradient mb-3">
+                    Login
+                </button>
+                <a href="/cadastro" class="btn btn-lg btn-success w-100 btn-primary bg-gradient mb-3 link_personalizado1">
+                    Cadastrar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+<!-- <script src="/static/js/Login.js"></script> -->
+<script>
+    import Login from "/static/js/Login.js"
+
+    const btn = document.getElementById("submit")
+    const login = new Login()
+    btn.addEventListener("click", login.encriptografar())
+    
+</script>
+
+{% endblock %}
